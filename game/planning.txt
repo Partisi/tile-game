@@ -1,0 +1,69 @@
+
+/*
+
+Planning Time:
+
+note. the planning here is more of a code representation, 
+for more explanatory notes, please refer to the google doc
+listed previously.
+
+MAP
+For the map, there are actually going to be 5 maps in this game.
+The reason for the 5 maps are the 3 dungeons, one 'main' world, and
+one for the final boss.
+
+Each one of these maps will be a 2d array that will signify what blocks
+go where such as [[1, 0, 3, 3, 3, 3, 0, 1]] for the top portion of a map
+(as an example), that will signify what tiles go where in each x,y position.
+
+There will also be a tracker for which map is currently being rendered out
+and will switch the map based off of what the player interacts with.
+
+Additionally, this will be the hardest part by far for this game and luckily
+is naturally suppose to be completed first (hardest first being done).
+
+PLAYER
+Now for the player, there will exist an x and a y and will be a relatively
+simple and straightforward design implementation. For this implementation,
+the player will be positioned at a certain x, y position and will use basic
+geometry and simple detection to handle for 'walls' in the map.
+
+Overall very simple.
+
+ENEMIES
+Enemies are functioning the exact same way as our previous game of Castle Hassle
+where enemies are adhering to a superclass of enemies with health, damage, speed,
+etc. Each enemy will also have a specific 'seek' function (once again similar to 
+my other game) that will be a way for the enemies to close the distance to the 
+player for added difficulty.
+
+Enemy Class
+class Enemy {
+    constructor(xStart, yStart) {
+        this.xPos = xStart
+        this.yPos = yStart
+        this.directionMoving = null // will start off not moving
+
+        this.health = 0 // will all be set in the subclass
+        this.damage = 0
+        this.speed = 0
+    }
+
+    attack = () => {...}
+    seek = () => {...}
+    die = () => {...}
+    display = () => {...}
+}
+
+BOSSES
+Bosses will be fairly challenging as well since they will essentially be the enemy
+class but with many added features. A challenge will be to implement special attacks
+for the bosses that randomly go off with extra difficulty to the user.
+
+While challenging, since this will adhere to the enemy superclass as well, it shouldn't
+be too much configuring.
+
+Enemies, with their special attacks, will also need some custom animations as well which
+are coming difficult to find. 
+
+*/
